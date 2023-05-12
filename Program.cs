@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -75,7 +74,6 @@ namespace Proyecto1
                             { "duenio", duenio },
                             { "color", color },
                             { "modelo", modelo },
-                            {"anio", anio},
                             { "kilometraje_actual", kilometraje_actual },
                             { "kilometraje_service", kilometraje_service }
                         };
@@ -84,7 +82,6 @@ namespace Proyecto1
                         break;
                                                 
                     case 2:
-                        // eliminar un tesla
                         int contador = 0;
                         foreach (Dictionary<string, object> auto in listaAutos)
                         {
@@ -113,7 +110,6 @@ namespace Proyecto1
                         volverMenu();
                         break;
                     case 3:
-                        // mostrar proximo a service
                         List<Dictionary<string, object>> autosService = new List<Dictionary<string, object>>();
                         if(listaAutos.Count > 0)
                         {
@@ -147,43 +143,9 @@ namespace Proyecto1
                         }
                         break;
                     case 4:
-                        // reordenar el listado por anio
-
-                        var ordenarLista = listaAutos.OrderBy(auto => (int)auto["anio"]);
-
-                        
-                        foreach (var auto in ordenarLista)
-                        {
-                            Console.WriteLine($"Modelo: {auto["modelo"]}, Año: {auto["anio"]}");
-                        }
-                    
-                        volverMenu();
-                        break; 
-                        
-                        
-                        
-                        
-                       
+                        break;
                     case 5:
-                    
-                        // Mostrar el auto más viejo
-                        var autoMasViejo = listaAutos.OrderBy(auto => (int)auto["anio"]).FirstOrDefault();
-
-                        if (autoMasViejo != null)
-                        {
-                            Console.WriteLine("Auto más viejo:");
-                            Console.WriteLine($"Modelo: {autoMasViejo["modelo"]}, Año: {autoMasViejo["anio"]}");
-                        }
-                        else
-                        {
-                            Console.WriteLine("No hay autos en la lista.");
-                        }
-
-                        volverMenu();
-                        break; 
-
-                        
-                            
+                        break;
                     case 6:
                         aux = false;
                         break;
